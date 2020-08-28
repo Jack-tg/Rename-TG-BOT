@@ -21,7 +21,7 @@ from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 @pyrogram.Client.on_message(pyrogram.Filters.command(["rename"]))
 async def rename_doc(bot, update):
     try:
-        chat = await bot.get_chat_member("@Zed1Projctz", update.chat.id)
+        chat = await bot.get_chat_member("@Zed1Projctz", -1001256560497)
         if chat.status=='kicked':
             if edit_message:
                 await reply("You are Banned😌")
