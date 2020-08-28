@@ -18,7 +18,7 @@ from pyrogram import Client, Filters, ChatPermissions
 from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["rename"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["rename"])
 async def rename_doc(bot, update):
     try:
         chat = await bot.get_chat_member("@Zed1Projctz", -1001256560497)
