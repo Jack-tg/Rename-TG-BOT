@@ -44,7 +44,7 @@ await m.reply_text(
    
    
     
-            return
+            
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
