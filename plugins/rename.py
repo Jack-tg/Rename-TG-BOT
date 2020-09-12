@@ -38,13 +38,8 @@ Bot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('ren
 await m.reply_text(
     await c.send_message(
          text = "rename file"
-        
-
-            ) 
-   
-   
-    
-            
+        )
+            return
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
@@ -146,3 +141,4 @@ await m.reply_text(
             text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE,
             reply_to_message_id=update.message_id
         )
+
