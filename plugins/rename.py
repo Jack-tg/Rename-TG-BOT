@@ -38,13 +38,8 @@ Bot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('ren
 await m.reply_text(
     await c.send_message(
          text = "rename file"
- 
-          if cb_function == "rename" and cb.message.chat.id == cb.chat 
-await cb.message
-f"RENAME_{cb_message_id}:/n"
-f"send me new name as reply to file"
-
-reply_markup=ForceReply(true)
+ reply_markup = ForceReply(true)
+          
 
         )
           )
