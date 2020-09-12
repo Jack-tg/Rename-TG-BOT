@@ -35,10 +35,7 @@ from PIL import Image
 from database.database import*
 
 Bot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('rename')))
-
-   
-   
-    await m.reply_text(
+await m.reply_text(
     await c.send_message(
          text = "rename file"
         reply_markup = InlineKeyboardButton([
@@ -51,6 +48,9 @@ Bot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('ren
 
                 )
             )
+   
+   
+    
             return
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
