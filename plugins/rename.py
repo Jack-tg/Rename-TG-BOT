@@ -35,7 +35,7 @@ from PIL import Image
 from database.database import*
 
 @bot.on_message(filters.command("Document")
-async def Document_handler(c: Client, m: Message):
+async def document_handler(c: Client, m: Message):
    
    
     await m.reply_text(
