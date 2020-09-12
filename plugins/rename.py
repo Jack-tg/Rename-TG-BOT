@@ -23,7 +23,7 @@ from translation import Translation
 
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-from pyrogram import Client, Filters
+from pyrogram import Client, Filters, InlinekeyboardMarkup, Inlinekeyboardbutton
 
 from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import progress_for_pyrogram
@@ -32,26 +32,22 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
-from database.database import *
+from database.database import*
 
+@bot.on_message(filters.command("Document")
+async def Document_handler(c: Client, m: Message):
+   
+   
+    await m.reply_text(
+         text = "rename file"
+        reply_markup = InlineKeyboardButton([
+       [ 
+         InlineKeyboardButton(text=f"{emoji.PENCIL}Rename",callback_data="")
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["change"]))
-async def rename_doc(bot, update):
-    if update.from_user.id in Config.BANNED_USERS:
-        await bot.delete_messages(
-            chat_id=update.chat.id,
-            message_ids=update.message_id,
-            revoke=True
-        )
-        return
-    TRChatBase(update.from_user.id, update.text, "change")
-    if (" " in update.text) and (update.reply_to_message is not None):
-        cmd, file_name = update.text.split(" ", 1)
-        if len(file_name) > 70:
-            await update.reply_text(
-                Translation.IFLONG_FILE_NAME.format(
-                    alimit="70",
-                    num=len(file_name)
+      ]  
+         ]) 
+          
+
                 )
             )
             return
