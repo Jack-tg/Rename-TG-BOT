@@ -38,16 +38,9 @@ Bot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('ren
 await m.reply_text(
     await c.send_message(
          text = "rename file"
-        reply_markup = InlineKeyboardButton([
-       [ 
-         InlineKeyboardButton(text=f"{emoji.PENCIL}Rename",callback_data="")
+        reply_markup = ForceReply()
 
-      ]  
-         ]) 
-          
-
-                )
-            )
+            ) 
    
    
     
