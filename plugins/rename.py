@@ -37,20 +37,8 @@ from database.database import*
 Bot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('rename')))
 await m.reply_text(
          text = "rename file"
-        reply_markup = InlineKeyboardButton([
-       [ 
-         InlineKeyboardButton(text=f"{emoji.PENCIL}Rename",callback_data="")
-
-      ]  
-         ]) 
-    )
-          if cb_function == "rename" and cb.message.chat.id == cb.chat 
-await cb.message
-f"RENAME_{cb_message_id}:/n"
-f"send me new name as reply to file"
-
+reply_to_message_id=m.message.reply_to_message.message_id
 reply_markup=ForceReply(true)
-
 
                   
                 
