@@ -23,7 +23,7 @@ from translation import Translation
 
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-from pyrogram import Client, Filters, InlinekeyboardMarkup, Inlinekeyboardbutton
+from pyrogram import Client, Filters, InlinekeyboardMarkup, Inlinekeyboardbutton,callback_query
 
 from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import progress_for_pyrogram
@@ -34,11 +34,12 @@ from hachoir.parser import createParser
 from PIL import Image
 from database.database import*
 
-@bot.on_message(filters.command("Document")
-async def document_handler(c: Client, m: Message):
+Bot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('rename')))
+
    
    
     await m.reply_text(
+    await c.send_message(
          text = "rename file"
         reply_markup = InlineKeyboardButton([
        [ 
