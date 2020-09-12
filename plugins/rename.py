@@ -23,7 +23,7 @@ from translation import Translation
 
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-from pyrogram import Client, Filters, Forcereply,callback_query
+from pyrogram import Client, Filters, Forcereply,callback_query, Inlinekeyboardmarkup, Inlinekeyboardbutton
 
 from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import progress_for_pyrogram
@@ -36,9 +36,25 @@ from database.database import*
 
 Bot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('rename')))
 await m.reply_text(
-    await c.send_message(
          text = "rename file"
- reply_markup = "ForceReply(true)"
+        reply_markup = InlineKeyboardButton([
+       [ 
+         InlineKeyboardButton(text=f"{emoji.PENCIL}Rename",callback_data="")
+
+      ]  
+         ]) 
+    )
+          if cb_function == "rename" and cb.message.chat.id == cb.chat 
+await cb.message
+f"RENAME_{cb_message_id}:/n"
+f"send me new name as reply to file"
+
+reply_markup=ForceReply(true)
+
+
+                  
+                
+            )
           
 
         )
