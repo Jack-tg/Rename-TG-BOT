@@ -1,6 +1,6 @@
 import datetime
 
-from pyrogram import filters as  Filters
+from pyrogram import Filters
 
 
 
