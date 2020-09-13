@@ -16,5 +16,5 @@ async def _(c, m):
             return
 
     snt = await m.reply_text("Hi there, Please wait while I'm getting everything ready to process your request!", quote=True)
-    )
+    
     
