@@ -38,7 +38,7 @@ Bot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('ren
 await m.reply_text(
          text = "rename file"
 reply_to_message_id=m.message.reply_to_message.message_id
-reply_markup=ForceReply(true)
+reply_markup=ForceReply(selective=true)
 
                   
                 
