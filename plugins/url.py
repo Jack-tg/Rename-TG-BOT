@@ -5,7 +5,7 @@ from pyrogram import Filters
 
 
 
-@Bot.on_message(Filters.private & ((Filters.text & ~Filters.edited) | Filters.media) & Filters.incoming)
+Bot.on_message(Filters.private & ((Filters.text & ~Filters.edited) | Filters.media) & Filters.incoming)
 async def _(c, m):
     
     if m.media:
