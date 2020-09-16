@@ -1,11 +1,11 @@
 import datetime
 
-from pyrogram import Filters
+from pyrogram import Filters,Client
 
 
 
 
-Bot.on_message(Filters.private & ((Filters.text & ~Filters.edited) | Filters.media) & Filters.incoming)
+@pyrogram.Client.on_message(Filters.private & ((Filters.text & ~Filters.edited) | Filters.media) & Filters.incoming)
 async def _(c, m):
     
     if m.media:
