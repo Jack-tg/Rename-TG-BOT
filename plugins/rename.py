@@ -39,7 +39,7 @@ async def document(bot, update):
     # logger.info(update)
     
     await bot.send_message(
-        chat_id=update.chat.id,
+       
         text="hi dude"
         chat_id=update.chat.id,
             message_ids=update.message_id,
