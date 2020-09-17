@@ -36,7 +36,7 @@ from database.database import *
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.document)
-async def rename_doc(bot, update):
+async def doc(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.delete_messages(
            Text = "hi"
