@@ -34,22 +34,12 @@ from PIL import Image
 from database.database import *
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.document)
-async def document(bot, update):
-    # logger.info(update)
-    
-    await bot.send_message(
-       
-        text="hi dude"
-        chat_id=update.chat.id,
-            message_ids=update.message_id,
-            revoke=True
-     ) 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["change"]))
+@pyrogram.Client.on_message(pyrogram.Filters.document)
 async def rename_doc(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.delete_messages(
+           Text = "hi"
             chat_id=update.chat.id,
             message_ids=update.message_id,
             revoke=True
